@@ -1,0 +1,100 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="MyCalculatorv1.MainWindow"
+        Title=" Blind FLM" Height="310" Width="237" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True">
+    <Grid Background="#FF3F3F4F" Height="270" VerticalAlignment="Top">
+
+        <TextBox Height="34.976" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,5.636,0,0" HorizontalAlignment="Left" Width="201.911" Background="Black" BorderThickness="2" x:Name="tb">
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </TextBox.Foreground>
+
+        </TextBox>
+        <Button Content="D" Width="59.364" Height="42.061" FontSize="18" BorderThickness="2" Click="Button_Click_1" Margin="17,55.744,50,0" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="Double Tap Operator">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <Button Content="F" Margin="81.364,56.267,81.364,0" VerticalAlignment="Top" Height="43.323" FontSize="18" BorderThickness="2" Click="Button_Click_1" ToolTip="Flick Operator" HorizontalContentAlignment="Center">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <Button Content="T" HorizontalAlignment="Left" Margin="17,104.589,50,0" VerticalAlignment="Top" Width="59.364" Height="42.061" FontSize="18" BorderThickness="2" Click="Button_Click_1" ToolTip="Tap operator" Grid.RowSpan="2">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <Button Content="S" Margin="81.364,0,81.364,123.349" FontSize="18" BorderThickness="2" Click="Button_Click_1" ToolTip="Slide Operator" VerticalAlignment="Bottom" Height="42.061">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Mental" Content="M" Margin="50,56.267,17,0" Width="59.364" Height="42.061" FontSize="18" BorderThickness="2" Click="Button_Click_1" ToolTip="Mental Operator" Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Caculate" Margin="10.911,0,0,7.732" VerticalAlignment="Bottom" Width="201" Height="37.654" FontSize="18" BorderThickness="2" Click="Result_click" HorizontalAlignment="Left">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Del" HorizontalAlignment="Right" Margin="50,104.59,17,123.351" Width="59.364" FontSize="18" BorderThickness="2" Click="Del_Click" ToolTip="Delete Operator" Height="42.061" Grid.RowSpan="2" Grid.ColumnSpan="3">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="Black"/>
+            </Button.Background>
+        </Button>
+        <CheckBox x:Name="Auto" Content="Auto Mental construction" Margin="11.708,0,42.565,86.875" AutomationProperties.Name="Auto" Foreground="#FFF9F5F5" Height="25.611" VerticalAlignment="Bottom" ToolTip="This choice will add the mental operator automatically according to the huirstic Rule0" IsThreeState="True" Checked="MentalDisable" Unchecked="MentalEnabled"/>
+        <TextBox TextWrapping="Wrap" Margin="10.911,0,0,54.923" HorizontalAlignment="Left" Width="201.911" Background="Black" BorderThickness="2" x:Name="Result" Height="34.976" VerticalAlignment="Bottom">
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </TextBox.Foreground>
+
+        </TextBox>
+
+    </Grid>
+</Window>
