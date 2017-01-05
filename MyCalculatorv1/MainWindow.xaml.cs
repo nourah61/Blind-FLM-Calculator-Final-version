@@ -86,7 +86,9 @@ namespace MyCalculatorv1
             int counter = 0;
             String sequence = tb.Text;
             String MentalSequence = "";
-            if (Auto.IsChecked == false) { 
+
+            // The first case where the auto mental construction checkbox is not checked
+    if (Auto.IsChecked == false) { 
                     while (sequenceLength > 0)
                     {
                         char operators = sequence[counter];
@@ -114,8 +116,9 @@ namespace MyCalculatorv1
                     }  // end of while loop
                     Result.Text += " = " + (DT+ F + M + S + T) + " Sec.";
                 } // end of if statement
- else
- {
+           // The second case where the auto mental construction checkbox is  checked
+     else
+      {
                 // Mental operator inerstion
 
                 char[] a = sequence.ToCharArray();
@@ -133,41 +136,13 @@ namespace MyCalculatorv1
                         b[bIndex++] = 'M';
                     }
                 }
-
-                // execution time calculation
-                int MentalSequenceLength = b.Length;
-
-                    while (MentalSequenceLength > 0)
-                    {
-                        char operators = b[counter];
-                        switch (operators)
-                        {
-                            case 'D':
-                            DT+= 0.62;
-                                break;
-                            case 'F':
-                                F += 0.12;
-                                break;
-                            case 'M':
-                                M += 1.35;
-                                break;
-                            case 'S':
-                                S += 0.17;
-                                break;
-                            case 'T':
-                                T += 0.31;
-                                break;
-
-                        } //end of switch cluase
-                        counter++;
-                        MentalSequenceLength--;
-                    }  // end of while loop
+                // writting operators's sequence to the textbox
                 string mentals = new string(b);
                 tb.Text = "";
                 tb.Text +=  mentals;
-                Result.Text += " = " + (DT+ F + M + S + T) + " Sec.";
+                Auto.IsChecked = false;       
 
-                } //end of else cluase
+            } //end of else cluase
                
                 }
 
@@ -175,7 +150,7 @@ namespace MyCalculatorv1
         {
             Application.Current.Shutdown();
         }
-
+        // Delete input textbox and output textbox
         private void Del_Click(object sender, RoutedEventArgs e)
         {
             tb.Text = "";
